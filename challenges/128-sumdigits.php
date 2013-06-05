@@ -8,8 +8,7 @@
  * @link http://www.reddit.com/r/dailyprogrammer/comments/1fnutb/06413_challenge_128_easy_sumthedigits_part_ii/ Challenge source.
  * @author Benedict Etzel <developer@beheh.de>
  */
-$stdin = fopen('php://stdin', 'r');
-for($s = $n = intval(fgets($stdin)); $n > 9; $s = $n) {
+for($s = $n = intval(fgets(fopen('php://stdin', 'r'))); $n > 9; $s = $n) {
 	for($i = $n = 0; $i < strlen($s); $i++) {
 		$n += substr($s, $i, 1);
 	}
